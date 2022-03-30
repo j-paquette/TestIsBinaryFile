@@ -1,0 +1,9 @@
+{
+  "scripts":{
+    "test-file": "node testIsBinaryFile.js"
+  },
+
+  "devDependencies": {
+    "isbinaryfile": "^5.0.0"
+  }
+}
