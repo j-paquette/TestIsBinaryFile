@@ -1,5 +1,6 @@
 {
   "scripts":{
+    "test-features": "node fileFeatures.js", 
     "test-file": "node testIsBinaryFile.js"
   },
 

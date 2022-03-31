@@ -28,36 +28,42 @@ console.log(isBinaryFileSync(bytes, size)); // true or false */
 
 const isBinaryFile = require('isbinaryfile').isBinaryFile;
 const fs = require("fs");
+const { isBinaryFileSync } = require('isbinaryfile');
 
-//const dir = "./fixtures";
-const filenames = fs.readdirSync(__dirname);
+const dir = "./fixtures";
+const filenames = fs.readdirSync(dir);
 
 console.log(filenames);
 
 
 
-filenames.forEach(file => {
-  const data = fs.readFileSync(filenames);
-  const stat = fs.lstatSync(file);
-
+filenames.forEach(filename => {
+ 
+  const filePath = dir + '/' + filename;
   //console.log(data);
-
-  isBinaryFile(data, stat.size).then((result) => {
-    if (result) {
-      console.log("It is binary!")
+  if (!fs.statSync(filePath).isDirectory()) {
+   
+      if (!isBinaryFileSync(filePath)) {
+        console.log(filePath, "No it is not.")
+      }
+      else {
+        console.log(filePath, "It is binary!")
+      }
     }
-    else {
-      console.log("No it is not.")
-    }
-  });
+  
 
-  const isBinaryFileSync = require('isbinaryfile').isBinaryFileSync;
-  const bytes = fs.readFileSync(data);
-  const size = fs.lstatSync(file).size;
-  console.log(isBinaryFileSync(bytes, size)); // true or false */
+  
+  
+
+  
 })
 
 
+
+   
+
+  
+  
 
 
 
