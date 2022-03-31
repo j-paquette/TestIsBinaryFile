@@ -1,0 +1,26 @@
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ethumbs.db
+Thumbs.db
+*.tmp
+*.log
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+dist/
+tmp/
+junit-results-*-report.xml
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+
+
